@@ -17,6 +17,11 @@ namespace FastPrimeFactoringAlgorithm
     {
       int upperLimit = int.Parse(numericUpDownPrimes.Value.ToString(CultureInfo.InvariantCulture));
       listBoxPrime.Items.Clear();
+      labelDurationPrimes.Text = "Duration:";
+      labelCounterPrimes.Text = "Count: 0";
+      Application.DoEvents();
+      Stopwatch chrono = new Stopwatch();
+      chrono.Start();
       progressBar1.Visible = true;
       progressBar1.Minimum = 3;
       progressBar1.Maximum = upperLimit;
@@ -33,7 +38,8 @@ namespace FastPrimeFactoringAlgorithm
 
       progressBar1.Value = progressBar1.Minimum;
       progressBar1.Visible = false;
-
+      chrono.Stop();
+      labelDurationPrimes.Text = "Duration: " + chrono.ElapsedMilliseconds + " milliseconds";
       labelCounterPrimes.Text = "Count: " + listBoxPrime.Items.Count;
     }
 
@@ -41,6 +47,11 @@ namespace FastPrimeFactoringAlgorithm
     {
       int upperLimit = int.Parse(numericUpDownPrimes.Value.ToString(CultureInfo.InvariantCulture));
       listBoxFactorizeNumbers.Items.Clear();
+      labelDurationFactorize.Text = "Duration:";
+      labelCounterFactorizeNumbers.Text = "Count: 0";
+      Application.DoEvents();
+      Stopwatch chrono = new Stopwatch();
+      chrono.Start();
       progressBar1.Visible = true;
       progressBar1.Minimum = 3;
       progressBar1.Maximum = upperLimit;
@@ -53,7 +64,8 @@ namespace FastPrimeFactoringAlgorithm
 
       progressBar1.Value = progressBar1.Minimum;
       progressBar1.Visible = false;
-
+      chrono.Stop();
+      labelDurationFactorize.Text = "Duration: " + chrono.ElapsedMilliseconds + " milliseconds";
       labelCounterFactorizeNumbers.Text = "Count: " + listBoxFactorizeNumbers.Items.Count;
     }
 

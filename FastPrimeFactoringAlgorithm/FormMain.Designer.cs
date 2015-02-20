@@ -37,15 +37,18 @@
       this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.numericUpDownPrimes = new System.Windows.Forms.NumericUpDown();
       this.numericUpDownFactorize = new System.Windows.Forms.NumericUpDown();
+      this.labelDurationPrimes = new System.Windows.Forms.Label();
+      this.labelDurationFactorize = new System.Windows.Forms.Label();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPrimes)).BeginInit();
       ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFactorize)).BeginInit();
       this.SuspendLayout();
       // 
       // buttonCalculate
       // 
-      this.buttonCalculate.Location = new System.Drawing.Point(44, 31);
+      this.buttonCalculate.Location = new System.Drawing.Point(33, 25);
+      this.buttonCalculate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.buttonCalculate.Name = "buttonCalculate";
-      this.buttonCalculate.Size = new System.Drawing.Size(286, 28);
+      this.buttonCalculate.Size = new System.Drawing.Size(126, 23);
       this.buttonCalculate.TabIndex = 0;
       this.buttonCalculate.Text = "List primes";
       this.buttonCalculate.UseVisualStyleBackColor = true;
@@ -54,26 +57,27 @@
       // listBoxPrime
       // 
       this.listBoxPrime.FormattingEnabled = true;
-      this.listBoxPrime.ItemHeight = 16;
-      this.listBoxPrime.Location = new System.Drawing.Point(44, 100);
+      this.listBoxPrime.Location = new System.Drawing.Point(33, 81);
+      this.listBoxPrime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.listBoxPrime.Name = "listBoxPrime";
-      this.listBoxPrime.Size = new System.Drawing.Size(286, 708);
+      this.listBoxPrime.Size = new System.Drawing.Size(128, 576);
       this.listBoxPrime.TabIndex = 1;
       // 
       // listBoxFactorizeNumbers
       // 
       this.listBoxFactorizeNumbers.FormattingEnabled = true;
-      this.listBoxFactorizeNumbers.ItemHeight = 16;
-      this.listBoxFactorizeNumbers.Location = new System.Drawing.Point(371, 100);
+      this.listBoxFactorizeNumbers.Location = new System.Drawing.Point(195, 81);
+      this.listBoxFactorizeNumbers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.listBoxFactorizeNumbers.Name = "listBoxFactorizeNumbers";
-      this.listBoxFactorizeNumbers.Size = new System.Drawing.Size(286, 708);
+      this.listBoxFactorizeNumbers.Size = new System.Drawing.Size(451, 576);
       this.listBoxFactorizeNumbers.TabIndex = 3;
       // 
       // buttonFactorize
       // 
-      this.buttonFactorize.Location = new System.Drawing.Point(371, 31);
+      this.buttonFactorize.Location = new System.Drawing.Point(195, 25);
+      this.buttonFactorize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.buttonFactorize.Name = "buttonFactorize";
-      this.buttonFactorize.Size = new System.Drawing.Size(286, 28);
+      this.buttonFactorize.Size = new System.Drawing.Size(451, 23);
       this.buttonFactorize.TabIndex = 2;
       this.buttonFactorize.Text = "Factorize numbers";
       this.buttonFactorize.UseVisualStyleBackColor = true;
@@ -82,27 +86,30 @@
       // labelCounterPrimes
       // 
       this.labelCounterPrimes.AutoSize = true;
-      this.labelCounterPrimes.Location = new System.Drawing.Point(44, 814);
+      this.labelCounterPrimes.Location = new System.Drawing.Point(33, 661);
+      this.labelCounterPrimes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.labelCounterPrimes.Name = "labelCounterPrimes";
-      this.labelCounterPrimes.Size = new System.Drawing.Size(74, 17);
+      this.labelCounterPrimes.Size = new System.Drawing.Size(56, 13);
       this.labelCounterPrimes.TabIndex = 4;
       this.labelCounterPrimes.Text = "Counter: 0";
       // 
       // labelCounterFactorizeNumbers
       // 
       this.labelCounterFactorizeNumbers.AutoSize = true;
-      this.labelCounterFactorizeNumbers.Location = new System.Drawing.Point(368, 814);
+      this.labelCounterFactorizeNumbers.Location = new System.Drawing.Point(193, 661);
+      this.labelCounterFactorizeNumbers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
       this.labelCounterFactorizeNumbers.Name = "labelCounterFactorizeNumbers";
-      this.labelCounterFactorizeNumbers.Size = new System.Drawing.Size(74, 17);
+      this.labelCounterFactorizeNumbers.Size = new System.Drawing.Size(56, 13);
       this.labelCounterFactorizeNumbers.TabIndex = 5;
       this.labelCounterFactorizeNumbers.Text = "Counter: 0";
       // 
       // progressBar1
       // 
       this.progressBar1.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.progressBar1.Location = new System.Drawing.Point(0, 859);
+      this.progressBar1.Location = new System.Drawing.Point(0, 733);
+      this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.progressBar1.Name = "progressBar1";
-      this.progressBar1.Size = new System.Drawing.Size(718, 23);
+      this.progressBar1.Size = new System.Drawing.Size(673, 19);
       this.progressBar1.TabIndex = 6;
       // 
       // numericUpDownPrimes
@@ -112,7 +119,8 @@
             0,
             0,
             0});
-      this.numericUpDownPrimes.Location = new System.Drawing.Point(47, 66);
+      this.numericUpDownPrimes.Location = new System.Drawing.Point(35, 54);
+      this.numericUpDownPrimes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.numericUpDownPrimes.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -124,7 +132,7 @@
             0,
             0});
       this.numericUpDownPrimes.Name = "numericUpDownPrimes";
-      this.numericUpDownPrimes.Size = new System.Drawing.Size(283, 22);
+      this.numericUpDownPrimes.Size = new System.Drawing.Size(124, 20);
       this.numericUpDownPrimes.TabIndex = 7;
       this.numericUpDownPrimes.Value = new decimal(new int[] {
             10000,
@@ -139,7 +147,8 @@
             0,
             0,
             0});
-      this.numericUpDownFactorize.Location = new System.Drawing.Point(374, 66);
+      this.numericUpDownFactorize.Location = new System.Drawing.Point(197, 54);
+      this.numericUpDownFactorize.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.numericUpDownFactorize.Maximum = new decimal(new int[] {
             10000000,
             0,
@@ -151,7 +160,7 @@
             0,
             0});
       this.numericUpDownFactorize.Name = "numericUpDownFactorize";
-      this.numericUpDownFactorize.Size = new System.Drawing.Size(283, 22);
+      this.numericUpDownFactorize.Size = new System.Drawing.Size(449, 20);
       this.numericUpDownFactorize.TabIndex = 8;
       this.numericUpDownFactorize.Value = new decimal(new int[] {
             10000,
@@ -159,11 +168,33 @@
             0,
             0});
       // 
+      // labelDurationPrimes
+      // 
+      this.labelDurationPrimes.AutoSize = true;
+      this.labelDurationPrimes.Location = new System.Drawing.Point(33, 687);
+      this.labelDurationPrimes.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelDurationPrimes.Name = "labelDurationPrimes";
+      this.labelDurationPrimes.Size = new System.Drawing.Size(50, 13);
+      this.labelDurationPrimes.TabIndex = 9;
+      this.labelDurationPrimes.Text = "Duration:";
+      // 
+      // labelDurationFactorize
+      // 
+      this.labelDurationFactorize.AutoSize = true;
+      this.labelDurationFactorize.Location = new System.Drawing.Point(192, 687);
+      this.labelDurationFactorize.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+      this.labelDurationFactorize.Name = "labelDurationFactorize";
+      this.labelDurationFactorize.Size = new System.Drawing.Size(50, 13);
+      this.labelDurationFactorize.TabIndex = 10;
+      this.labelDurationFactorize.Text = "Duration:";
+      // 
       // FormMain
       // 
-      this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+      this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(718, 882);
+      this.ClientSize = new System.Drawing.Size(673, 752);
+      this.Controls.Add(this.labelDurationFactorize);
+      this.Controls.Add(this.labelDurationPrimes);
       this.Controls.Add(this.numericUpDownFactorize);
       this.Controls.Add(this.numericUpDownPrimes);
       this.Controls.Add(this.progressBar1);
@@ -173,6 +204,7 @@
       this.Controls.Add(this.buttonFactorize);
       this.Controls.Add(this.listBoxPrime);
       this.Controls.Add(this.buttonCalculate);
+      this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
       this.Name = "FormMain";
       this.ShowIcon = false;
       this.Text = "Fast Prime Factoring Algorithm";
@@ -196,6 +228,8 @@
     private System.Windows.Forms.ProgressBar progressBar1;
     private System.Windows.Forms.NumericUpDown numericUpDownPrimes;
     private System.Windows.Forms.NumericUpDown numericUpDownFactorize;
+    private System.Windows.Forms.Label labelDurationPrimes;
+    private System.Windows.Forms.Label labelDurationFactorize;
   }
 }
 
