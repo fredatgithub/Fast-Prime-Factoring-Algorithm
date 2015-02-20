@@ -119,7 +119,7 @@
             0,
             0});
       this.numericUpDownPrimes.Minimum = new decimal(new int[] {
-            1000,
+            10000,
             0,
             0,
             0});
@@ -127,7 +127,7 @@
       this.numericUpDownPrimes.Size = new System.Drawing.Size(283, 22);
       this.numericUpDownPrimes.TabIndex = 7;
       this.numericUpDownPrimes.Value = new decimal(new int[] {
-            1000,
+            10000,
             0,
             0,
             0});
@@ -146,7 +146,7 @@
             0,
             0});
       this.numericUpDownFactorize.Minimum = new decimal(new int[] {
-            1000,
+            10000,
             0,
             0,
             0});
@@ -154,7 +154,7 @@
       this.numericUpDownFactorize.Size = new System.Drawing.Size(283, 22);
       this.numericUpDownFactorize.TabIndex = 8;
       this.numericUpDownFactorize.Value = new decimal(new int[] {
-            1000,
+            10000,
             0,
             0,
             0});
