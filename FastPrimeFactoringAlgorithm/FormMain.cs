@@ -1,4 +1,18 @@
-﻿using System.Diagnostics;
+﻿//******************************************************************************
+// Author           :   Alexander Bell
+// Copyright        :   2007-2011 Infosoft International Inc
+// Date Created     :   01/15/2007
+// Last Modified    :   02/08/2011
+// Description      :   Prime Factoring
+//******************************************************************************
+// DISCLAIMER: This Application is provide on AS IS basis without any warranty
+//******************************************************************************
+//******************************************************************************
+// TERMS OF USE     :   This module is copyrighted.
+//                  :   You can use it at your sole risk provided that you keep
+//                  :   the original copyright note.
+//******************************************************************************
+using System.Diagnostics;
 using System.Reflection;
 using System.Windows.Forms;
 using FastPrimeFactoringAlgorithm.Properties;
