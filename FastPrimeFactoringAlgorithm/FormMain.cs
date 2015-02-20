@@ -13,6 +13,7 @@
 //                  :   the original copyright note.
 //******************************************************************************
 using System.Diagnostics;
+using System.Globalization;
 using System.Reflection;
 using System.Windows.Forms;
 using FastPrimeFactoringAlgorithm.Properties;
@@ -28,7 +29,7 @@ namespace FastPrimeFactoringAlgorithm
 
     private void buttonCalculate_Click(object sender, System.EventArgs e)
     {
-      int upperLimit = int.Parse(numericUpDownPrimes.Value.ToString());
+      int upperLimit = int.Parse(numericUpDownPrimes.Value.ToString(CultureInfo.InvariantCulture));
       listBoxPrime.Items.Clear();
       progressBar1.Visible = true;
       progressBar1.Minimum = 3;
@@ -52,7 +53,7 @@ namespace FastPrimeFactoringAlgorithm
 
     private void buttonFactorize_Click(object sender, System.EventArgs e)
     {
-      int upperLimit = int.Parse(numericUpDownPrimes.Value.ToString());
+      int upperLimit = int.Parse(numericUpDownPrimes.Value.ToString(CultureInfo.InvariantCulture));
       listBoxFactorizeNumbers.Items.Clear();
       progressBar1.Visible = true;
       progressBar1.Minimum = 3;
@@ -95,12 +96,8 @@ namespace FastPrimeFactoringAlgorithm
 
     private void GetWindowValue()
     {
-      // Set this if you want a minimum width
       Width = Settings.Default.WindowWidth < 400 ? 400 : Settings.Default.WindowWidth;
-      //Width = Settings.Default.WindowWidth;
-      // Set this if you want a minimum Height
       Height = Settings.Default.WindowHeight < 200 ? 200 : Settings.Default.WindowHeight;
-      //Height = Settings.Default.WindowHeight;
       Top = Settings.Default.WindowTop < 0 ? 0 : Settings.Default.WindowTop;
       Left = Settings.Default.WindowLeft < 0 ? 0 : Settings.Default.WindowLeft;
     }
