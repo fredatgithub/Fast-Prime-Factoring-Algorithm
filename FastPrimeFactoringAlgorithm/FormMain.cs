@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Globalization;
+using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
 using FastPrimeFactoringAlgorithm.Properties;
@@ -15,7 +16,8 @@ namespace FastPrimeFactoringAlgorithm
 
     private void buttonCalculate_Click(object sender, System.EventArgs e)
     {
-      int upperLimit = int.Parse(numericUpDownPrimes.Value.ToString(CultureInfo.InvariantCulture));
+      int upperLimit = int.Parse(numericUpDownPrimesTo.Value.ToString(CultureInfo.InvariantCulture));
+      int lowerLimit = int.Parse(numericUpDownPrimesFrom.Value.ToString(CultureInfo.InvariantCulture));
       listBoxPrime.Items.Clear();
       labelDurationPrimes.Text = "Duration:";
       labelCounterPrimes.Text = "Count: 0";
@@ -23,10 +25,10 @@ namespace FastPrimeFactoringAlgorithm
       Stopwatch chrono = new Stopwatch();
       chrono.Start();
       progressBar1.Visible = true;
-      progressBar1.Minimum = 3;
+      progressBar1.Minimum = lowerLimit;
       progressBar1.Maximum = upperLimit;
       progressBar1.Value = progressBar1.Minimum;
-      for (int i = 3; i < upperLimit; i++)
+      for (int i = lowerLimit; i < upperLimit; i++)
       {
         if (Integers.IsPrime(i))
         {
@@ -34,8 +36,10 @@ namespace FastPrimeFactoringAlgorithm
         }
 
         progressBar1.Value = i;
+        Application.DoEvents();
       }
 
+      buttonSaveToText.Enabled = listBoxPrime.Items.Count > 0;
       progressBar1.Value = progressBar1.Minimum;
       progressBar1.Visible = false;
       chrono.Stop();
@@ -45,7 +49,7 @@ namespace FastPrimeFactoringAlgorithm
 
     private void buttonFactorize_Click(object sender, System.EventArgs e)
     {
-      int upperLimit = int.Parse(numericUpDownPrimes.Value.ToString(CultureInfo.InvariantCulture));
+      int upperLimit = int.Parse(numericUpDownPrimesFrom.Value.ToString(CultureInfo.InvariantCulture));
       listBoxFactorizeNumbers.Items.Clear();
       labelDurationFactorize.Text = "Duration:";
       labelCounterFactorizeNumbers.Text = "Count: 0";
@@ -74,6 +78,7 @@ namespace FastPrimeFactoringAlgorithm
       DisplayTitle();
       GetWindowValue();
       progressBar1.Visible = false;
+      buttonSaveToText.Enabled = false;
     }
 
     private void DisplayTitle()
@@ -103,6 +108,49 @@ namespace FastPrimeFactoringAlgorithm
     private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
     {
       SaveWindowValue();
+    }
+
+    private void buttonSaveToText_Click(object sender, System.EventArgs e)
+    {
+      if (listBoxPrime.Items.Count > 0)
+      {
+        string fileName = "Primes-" + listBoxPrime.Items[0] + "-TO-" + listBoxPrime.Items[listBoxPrime.Items.Count - 1] + ".txt";
+        bool overwriteFile = false;
+        if (File.Exists(fileName))
+        {
+          if (DisplayMessage("The file {0} already exists\nDo you want to overwrite it ?",
+            "The file already exists", MessageBoxButtons.YesNo) == DialogResult.Yes)
+          {
+            overwriteFile = true;
+          }
+        }
+
+        if (overwriteFile)
+        {
+          File.Delete(fileName);
+        }
+        
+        StreamWriter sw = new StreamWriter(fileName);
+        foreach (int item in listBoxPrime.Items)
+        {
+          sw.WriteLine(item);
+        }
+        
+        sw.Flush();
+        sw.Close();
+        if (
+          DisplayMessage("Do you want to open the newly saved text file?", "Open text file", MessageBoxButtons.YesNo) ==
+          DialogResult.Yes)
+        {
+          Process.Start(fileName);
+        }
+      }
+    }
+
+    private DialogResult DisplayMessage(string message, string title, MessageBoxButtons buttons)
+    {
+      DialogResult result = MessageBox.Show(this, message, title, buttons);
+      return result;
     }
   }
 }
