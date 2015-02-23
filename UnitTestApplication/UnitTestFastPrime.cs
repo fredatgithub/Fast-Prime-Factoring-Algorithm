@@ -93,10 +93,30 @@ namespace UnitTestApplication
     }
 
     [TestMethod]
-    public void TestMethod1()
+    [DataRow("", "abc", "abc")]
+    public void TestMethod1(string first, string second, string result)
+    {
+      Assert.AreEqual<string>(result, first + second);
+    }
+
+    [TestMethod]
+    public void TestMethod2()
     {
       const bool result = true;
       Assert.IsTrue(result);
+    }
+
+    private class DataRowAttribute : Attribute
+    {
+      public string first { get; set; }
+      public string second { get; set; }
+      public string result { get; set; }
+      public DataRowAttribute(string first, string second, string result)
+      {
+        this.first = first;
+        this.second = second;
+        this.result = result;
+      }
     }
   }
 }
